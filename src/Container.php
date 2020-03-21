@@ -25,9 +25,9 @@ class Container
         try {
             $reflection = new \ReflectionClass($name);
 
-            $dependencies = $this->bindDependencies($reflection);
+            $arguments = $this->buildArguments($reflection);
 
-            return $reflection->newInstanceArgs($dependencies);
+            return $reflection->newInstanceArgs($arguments);
         } catch (\ReflectionException $e) {
             throw new EntityNotFoundException(sprintf('Entity "%s" was not found in container.', $name));
             return null;
@@ -39,7 +39,7 @@ class Container
         return array_key_exists($name, $this->bindings);
     }
 
-    private function bindDependencies(\ReflectionClass $reflection): array
+    private function buildArguments(\ReflectionClass $reflection): array
     {
         if (!$constructor = $reflection->getConstructor()) {
             return [];
