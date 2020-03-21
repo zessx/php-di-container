@@ -11,7 +11,7 @@ class Container
         $this->bindings[$name] = $factory;
     }
 
-    public function get(string $name): mixed
+    public function get(string $name)
     {
         if (!$this->has($name)) {
             throw new \Exception('Entry could not be found in the container.');
@@ -23,6 +23,6 @@ class Container
 
     public function has(string $name): bool
     {
-        return array_search($name, $this->bindings) !== false;
+        return array_key_exists($name, $this->bindings);
     }
 }

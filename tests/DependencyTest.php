@@ -14,7 +14,7 @@ class DependencyTest extends TestCase
     {
         $container = new Container();
 
-        $container->set(Baz::class, function(Container $container) {
+        $container->set(Baz::class, function (Container $container) {
             return new Baz();
         });
 
@@ -25,15 +25,15 @@ class DependencyTest extends TestCase
     {
         $container = new Container();
 
-        $container->set(Foo::class, function(Container $container) {
+        $container->set(Foo::class, function (Container $container) {
             return new Foo($container->get(Bar::class));
         });
 
-        $container->set(Bar::class, function(Container $container) {
+        $container->set(Bar::class, function (Container $container) {
             return new Bar($container->get(Baz::class));
         });
 
-        $container->set(Baz::class, function(Container $container) {
+        $container->set(Baz::class, function (Container $container) {
             return new Baz();
         });
 

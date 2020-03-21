@@ -11,19 +11,19 @@ class ContainerTest extends TestCase
     {
         $container = new Container();
 
-        $container->set('foo', function(Container $container) {
-            return new stdClass();
+        $container->set('foo', function (Container $container) {
+            return new \stdClass();
         });
 
-        $this->assertInstanceOf(stdClass::class, $container->get('foo'));
+        $this->assertInstanceOf(\stdClass::class, $container->get('foo'));
     }
 
     public function testHas()
     {
         $container = new Container();
 
-        $container->set('foo', function(Container $container) {
-            return new stdClass();
+        $container->set('foo', function (Container $container) {
+            return new \stdClass();
         });
 
         $this->assertTrue($container->has('foo'));
