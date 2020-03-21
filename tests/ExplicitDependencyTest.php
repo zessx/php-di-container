@@ -8,9 +8,9 @@ use ZCode\DI\Test\Entity\Foo;
 use ZCode\DI\Test\Entity\Bar;
 use ZCode\DI\Test\Entity\Baz;
 
-class DependencyTest extends TestCase
+class ExplicitDependencyTest extends TestCase
 {
-    public function testSingleLevelDependency()
+    public function testSingleLevelDependency(): void
     {
         $container = new Container();
 
@@ -21,7 +21,7 @@ class DependencyTest extends TestCase
         $this->assertInstanceOf(Baz::class, $container->get(Baz::class));
     }
 
-    public function testMultipleLevelDependency()
+    public function testMultipleLevelDependency(): void
     {
         $container = new Container();
 

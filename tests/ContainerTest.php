@@ -7,7 +7,7 @@ use ZCode\DI\Container;
 
 class ContainerTest extends TestCase
 {
-    public function testSet()
+    public function testGet(): void
     {
         $container = new Container();
 
@@ -18,7 +18,7 @@ class ContainerTest extends TestCase
         $this->assertInstanceOf(\stdClass::class, $container->get('foo'));
     }
 
-    public function testHas()
+    public function testHas(): void
     {
         $container = new Container();
 

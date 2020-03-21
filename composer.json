@@ -1,6 +1,6 @@
 {
     "name": "zessx/php-di-container",
-    "description": "Self-made Dependency Injection Container for learning purpose",
+    "description": "Dependency Injection Container PHP Implementation",
     "type": "library",
     "license": "GPLv3",
     "authors": [
